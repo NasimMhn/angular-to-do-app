@@ -4,14 +4,3 @@
   margin: 10px;
   padding: 10px;
 }
-
-.to-do-item {
-  background: lightgoldenrodyellow;
-  border: 1px solid black;
-  margin: 5px;
-  padding: 5px;
-}
-
-.finished-item {
-  background: lightseagreen;
-}

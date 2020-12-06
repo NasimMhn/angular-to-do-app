@@ -3,15 +3,21 @@ import * as moment from 'moment';
 
 
 export class ToDoItem {
-  title: string;
   description: string;
-  created: string;
-  finished: boolean;
-  constructor(title: string, description: string) {
-    this.title = title;
+  created: Date;
+  finished: Date | null;
+  constructor(description: string) {
     this.description = description;
-    this.created = moment(new Date()).format('lll');
-    this.finished = false;
+    this.created = new Date();
+    this.finished = null;
+  }
+
+  public getCreated = () => {
+    return moment(this.created).format('lll');
+  }
+
+  public isFinished = () => {
+    return this.finished instanceof Date;
   }
 }
 
@@ -25,10 +31,10 @@ export class ToDoListComponent implements OnInit {
   pageTitle = 'To-Do List';
 
   items = [
-    new ToDoItem('First', 'Description 1'),
-    new ToDoItem('Second', 'Description 2'),
-    new ToDoItem('Third', 'Description 3'),
-    new ToDoItem('Forth', 'Description 4')
+    new ToDoItem('Description 1'),
+    new ToDoItem('Description 2'),
+    new ToDoItem('Description 3'),
+    new ToDoItem('Description 4')
   ];
 
   constructor() { }

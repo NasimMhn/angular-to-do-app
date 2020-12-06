@@ -1,8 +1,7 @@
 <h1>{{ pageTitle }}</h1>
-
 <div class="to-do-list">
+  <app-add-item></app-add-item>
   <div *ngFor="let item of items">
     <app-to-do-item [item]="item"></app-to-do-item>
   </div>
-
 </div>

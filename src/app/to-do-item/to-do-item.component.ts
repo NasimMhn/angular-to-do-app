@@ -1,6 +1,4 @@
-import { isNgTemplate } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
-import * as moment from 'moment';
 import { ToDoItem } from '../to-do-list/to-do-list.component';
 
 
@@ -20,14 +18,12 @@ export class ToDoItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  handleClick(item: ToDoItem) {
-    console.log(item);
-
-    if (!item.finished) {
-      item.finished = true;
+  handleClick(item: ToDoItem): void {
+    if (item.finished instanceof Date) {
+      item.finished = null;
     }
     else {
-      item.finished = false;
+      item.finished = new Date();
     }
   }
 }
