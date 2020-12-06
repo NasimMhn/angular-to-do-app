@@ -1,1 +1,6 @@
-<p>to-do-item works!</p>
+<div *ngIf="item" (click)="handleClick(item)">
+  <div>{{ item.title }}</div>
+  <div>{{ item.description }}</div>
+  <div>{{ item.created }}</div>
+  <div>{{ item.finished }}</div>
+</div>
