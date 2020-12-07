@@ -1,10 +1,84 @@
 .to-do-item {
-  background: lightpink;
   border: 1px solid black;
-  margin: 8px 0px;
-  padding: 5px;
+  padding: 6px;
+  display: grid;
+  grid-template-columns: 30px auto 80px;
+  grid-gap: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .finished-item {
-  background: lightseagreen;
+  background: rgb(169, 250, 212);
+}
+
+.created-date {
+  font-size: small;
+}
+
+.description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+
+.checkmark {
+  box-sizing: border-box;
+  position: absolute;
+  height: 100%;
+  width: 18px;
+  background: white;
+  border-radius: 25%;
+  border: 1px solid rgb(105, 105, 105);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+
+.container input:checked~.checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+
+.container .checkmark:after {
+  left: 4px;
+  top: 0px;
+  width: 5px;
+  height: 10px;
+  border: solid rgb(6, 138, 34);
+  border-width: 0 4px 4px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }

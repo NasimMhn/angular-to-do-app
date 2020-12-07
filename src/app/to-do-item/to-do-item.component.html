@@ -1,5 +1,15 @@
-<div *ngIf="item" (click)="handleClick(item)" class="to-do-item" [ngClass]="{'finished-item' : item.isFinished()}">
-  <div>{{ item.description }}</div>
-  <div>{{ item.getCreated() }}</div>
-  <div>{{ item.isFinished() }}</div>
+<div *ngIf="item" class="to-do-item" [ngClass]="{'finished-item' : item.isFinished()}">
+  <!-- <span class="checkboxtext"><input type="checkbox" [checked]="item.isFinished() == 'true'"
+      (click)="handleClick(item)"></span> -->
+
+
+
+  <label class="container">
+    <input type="checkbox" [checked]="item.isFinished()" (click)="handleClick(item)">
+    <span class="checkmark"></span>
+  </label>
+
+  <div class="description">{{ item.description }}</div>
+  <div class="created-date">{{ item.getCreated() }}</div>
+
 </div>
