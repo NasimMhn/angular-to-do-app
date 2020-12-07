@@ -1,8 +1,4 @@
 <div *ngIf="item" class="to-do-item" [ngClass]="{'finished-item' : item.isFinished()}">
-  <!-- <span class="checkboxtext"><input type="checkbox" [checked]="item.isFinished() == 'true'"
-      (click)="handleClick(item)"></span> -->
-
-
 
   <label class="container">
     <input type="checkbox" [checked]="item.isFinished()" (click)="handleClick(item)">
