@@ -13,7 +13,7 @@ export class ToDoItem {
   }
 
   public getCreated = () => {
-    return moment(this.created).format('lll');
+    return moment(this.created).fromNow();
   }
 
   public isFinished = () => {
@@ -36,11 +36,18 @@ export class ToDoListComponent implements OnInit {
     new ToDoItem('Description 3'),
     new ToDoItem('Description 4')
   ];
+  // public sortedList(items: ToDoItem[]): ToDoItem[] {
+  //   return items.sort((a, b) => (a.created > b.created) ? 1 : ((b.created > a.created) ? -1 : 0));
+  // }
 
   constructor() { }
 
-  ngOnInit(): void {
+  addItem(description: string): void {
+    this.items.push(new ToDoItem(description));
+  }
 
+  ngOnInit(): void {
   }
 
 }
+

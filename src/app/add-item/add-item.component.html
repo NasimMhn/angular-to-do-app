@@ -1,2 +1,4 @@
-<input type="text" />
-<button>Add</button>
+<div>
+  <input #descriptionInput />
+  <button (click)="addItem(descriptionInput.value); descriptionInput.value=''">Add</button>
+</div>
